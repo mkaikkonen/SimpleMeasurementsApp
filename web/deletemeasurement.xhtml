@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Delete measurement</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>        
+                <f:subview id="MeasuremenListSubView1">
+                    <ui:include src="buttonlist.xhtml">
+                        <ui:param name="ButtonList" value="Button List" />
+                    </ui:include>                
+                </f:subview>               
+
+                <h:outputLabel value="ID:"/>  
+                <h:inputText id="removeId" value="#{MeasurementView.id}" label="ID" /><br/>
+                <h:commandButton id="removeMeasurementBtn" action="#{MeasurementView.deleteMeasurement}" 
+                    value="Delete measurement"/>
+                
+                <f:subview id="MeasuremenListSubView2">
+                    <ui:include src="measurementlist.xhtml">
+                        <ui:param name="MeasurementList" value="Measurement List" />
+                    </ui:include>                
+                </f:subview>
+                
+                <h:commandButton action="#{MeasurementView.back}" value="Back"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
+

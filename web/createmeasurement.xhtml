@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">    
+    <head>
+        <title>Create measurement</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <f:view> 
+            <h:form>
+                <f:subview id="MeasuremenListSubView1">
+                    <ui:include src="buttonlist.xhtml">
+                        <ui:param name="ButtonList" value="Button List" />
+                    </ui:include>                
+                </f:subview> 
+                
+                <h:outputLabel value="Create measurement:"/><br/>
+                <h:outputLabel id="sensor1Label" value="Sensor 1:"/>
+                <h:inputText value="#{MeasurementView.measurement.sensor1}"/><br/>
+                <h:outputLabel id="sensor2Label" value="Sensor 2:"/>
+                <h:inputText value="#{MeasurementView.measurement.sensor2}"/><br/>
+                <h:outputLabel id="sensor3Label" value="Sensor 3:"/>
+                <h:inputText value="#{MeasurementView.measurement.sensor3}"/><br/>
+                <h:outputLabel id="sensor4Label" value="Sensor 4:"/>
+                <h:inputText value="#{MeasurementView.measurement.sensor4}"/><br/>
+                <h:outputLabel id="noteLabel" value="Note:"/>
+                <h:inputText value="#{MeasurementView.measurement.note}"/><br/>
+                
+                <h:commandButton action="#{MeasurementView.createMeasurement}" 
+                                 value="Create measurement"/>
+                
+                <f:subview id="MeasuremenListSubView">
+                    <ui:include src="measurementlist.xhtml">
+                        <ui:param name="MeasurementList"
+                                  value="Measurement List"/>
+                    </ui:include>                
+                </f:subview>                                
+            </h:form>
+        </f:view>
+    </body>
+</html>
