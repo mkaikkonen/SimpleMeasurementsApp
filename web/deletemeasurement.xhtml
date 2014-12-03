@@ -16,18 +16,22 @@
                     </ui:include>                
                 </f:subview>               
 
-                <h:outputLabel value="ID:"/>  
-                <h:inputText id="removeId" value="#{MeasurementView.id}" label="ID" /><br/>
+                <h:outputLabel for="removeId" value="ID:" title="ID"/>                  
+                <h:inputText id="removeId" value="#{MeasurementView.id}" label="ID" required="true" requiredMessage="ID is required" title="Enter ID here."/>
+                <h:message id="m1" for="removeId" style="color:red"/>
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" rendered="#{MeasurementView.error}"/>
+                <br></br>  
+                
                 <h:commandButton id="removeMeasurementBtn" action="#{MeasurementView.deleteMeasurement}" 
                     value="Delete measurement"/>
-                
+
                 <f:subview id="MeasuremenListSubView2">
                     <ui:include src="measurementlist.xhtml">
                         <ui:param name="MeasurementList" value="Measurement List" />
                     </ui:include>                
                 </f:subview>
                 
-                <h:commandButton action="#{MeasurementView.back}" value="Back"/>
+                <h:button outcome="index" value="Home"/>
             </h:form>
         </f:view>
     </h:body>

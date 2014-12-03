@@ -27,11 +27,11 @@ and open the template in the editor.
                 <h:outputLabel value="ID:"/>  
                 <h:inputText value="#{MeasurementView.id}" label="ID" /><br/>
                 
-                <h:outputLabel value="Sensor 1:"/><h:inputText value="#{MeasurementView.measurement.sensor1}"/><br/>
-                <h:outputLabel value="Sensor 2:"/><h:inputText value="#{MeasurementView.measurement.sensor2}"/><br/>
-                <h:outputLabel value="Sensor 3:"/><h:inputText value="#{MeasurementView.measurement.sensor3}"/><br/>
-                <h:outputLabel value="Sensor 4:"/><h:inputText value="#{MeasurementView.measurement.sensor4}"/><br/>
-                <h:outputLabel value="Note:"/><h:inputText value="#{MeasurementView.measurement.note}"/><br/>
+                <h:outputLabel value="Sensor 1:"/><h:inputText value="#{MeasurementView.sensor1}"/><br/>
+                <h:outputLabel value="Sensor 2:"/><h:inputText value="#{MeasurementView.sensor2}"/><br/>
+                <h:outputLabel value="Sensor 3:"/><h:inputText value="#{MeasurementView.sensor3}"/><br/>
+                <h:outputLabel value="Sensor 4:"/><h:inputText value="#{MeasurementView.sensor4}"/><br/>
+                <h:outputLabel value="Note:"/><h:inputText value="#{MeasurementView.note}"/><br/>
                 <h:commandButton action="#{MeasurementView.updateMeasurement}" 
                     value="Update measurement"/>
                 
