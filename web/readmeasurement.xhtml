@@ -22,9 +22,14 @@ and open the template in the editor.
                     </ui:include>                
                 </f:subview> 
                 
-                <h:outputLabel value="Read measurement:"/><br/>
-                <h:outputLabel value="ID:"/>
-                <h:inputText value="#{MeasurementView.id}" label="ID" /><br/>
+                <h:outputLabel for="readId" value="Read measurement (ID):" title="ID"/>
+                <h:inputText id="readId" value="#{MeasurementView.id}" label="ID"
+                    title="Set ID you want to read."
+                    required="true" requiredMessage="ID is required."/>
+                <h:message id="m1" for="readId" style="color:red"/>   
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" 
+                    rendered="#{MeasurementView.error}"/>               
+                <br/>
 
                 <h:commandButton id="getMeasurementBtn" 
                                  action="#{MeasurementView.readMeasurement}" 

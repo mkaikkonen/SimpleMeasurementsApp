@@ -22,18 +22,48 @@ and open the template in the editor.
                     </ui:include>                
                 </f:subview> 
                 
-                <h:outputLabel value="Update measurement:"/><br/>
+                <h:outputLabel for="updateId" value="Update measurement (ID):" title="ID"/>              
+                <h:inputText id="updateId" value="#{MeasurementView.id}" title="Set ID you want to update."
+                    required="true" requiredMessage="ID is required."/>
+                <h:message id="m1" for="updateId" style="color:red"/>                
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" 
+                    rendered="#{MeasurementView.error}"/>                
+                <br/>
                 
-                <h:outputLabel value="ID:"/>  
-                <h:inputText value="#{MeasurementView.id}" label="ID" /><br/>
+                <h:outputLabel for="sensor1Value" value="Sensor 1:"/>
+                <h:inputText id="sensor1Value" value="#{MeasurementView.sensor1}" title="Set Sensor1 value." 
+                    required="true" requiredMessage="Sensor1 value is required."/>
+                <h:message id="m2" for="sensor1Value" style="color:red"/>
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" 
+                    rendered="#{MeasurementView.error}"/><br/>
                 
-                <h:outputLabel value="Sensor 1:"/><h:inputText value="#{MeasurementView.sensor1}"/><br/>
-                <h:outputLabel value="Sensor 2:"/><h:inputText value="#{MeasurementView.sensor2}"/><br/>
-                <h:outputLabel value="Sensor 3:"/><h:inputText value="#{MeasurementView.sensor3}"/><br/>
-                <h:outputLabel value="Sensor 4:"/><h:inputText value="#{MeasurementView.sensor4}"/><br/>
-                <h:outputLabel value="Note:"/><h:inputText value="#{MeasurementView.note}"/><br/>
+                <h:outputLabel for="sensor2Value" value="Sensor 2:"/>
+                <h:inputText id="sensor2Value" value="#{MeasurementView.sensor2}" title="Set Sensor2 value."
+                    required="true" requiredMessage="Sensor2 value is required."/>
+                <h:message id="m3" for="sensor2Value" style="color:red"/>
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" 
+                    rendered="#{MeasurementView.error}"/><br/>
+                
+                <h:outputLabel for="sensor3Value" value="Sensor 3:"/>
+                <h:inputText id="sensor3Value" value="#{MeasurementView.sensor3}" title="Set Sensor3 value."
+                    required="true" requiredMessage="Sensor3 value is required."/>
+                <h:message id="m4" for="sensor3Value" style="color:red"/>
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" 
+                    rendered="#{MeasurementView.error}"/><br/>
+                
+                <h:outputLabel for="sensor4Value" value="Sensor 4:"/>
+                <h:inputText id="sensor4Value" value="#{MeasurementView.sensor4}" title="Set Sensor4 value."
+                    required="true" requiredMessage="Sensor4 value is required."/>
+                <h:message id="m5" for="sensor4Value" style="color:red"/>
+                <h:outputText value="#{MeasurementView.errorDescription}" style="font-weight:bold; color:red" 
+                    rendered="#{MeasurementView.error}"/><br/>
+                
+                <h:outputLabel for="updateNote" value="Note:"/>
+                <h:inputText id="updateNote" value="#{MeasurementView.note}" title="Set note."/>
+                <br/>
+                
                 <h:commandButton action="#{MeasurementView.updateMeasurement}" 
-                    value="Update measurement"/>
+                        value="Update measurement"/>
                 
                 <f:subview id="MeasuremenListSubView">
                     <ui:include src="measurementlist.xhtml">
@@ -41,7 +71,7 @@ and open the template in the editor.
                     </ui:include>                
                 </f:subview>
                 
-                <h:commandButton action="#{MeasurementView.back}" value="Back"/>
+                <h:button outcome="index" value="Home"/>
             </h:form>            
         </f:view>
     </body>
